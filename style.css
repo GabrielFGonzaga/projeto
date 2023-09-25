@@ -6,7 +6,7 @@
 
 :root {
   --text-color: white;
-  --bg-url: url(./assets/openhei.jpeg);
+  --bg-url: url(./assets/openhei_resized.jpeg);
   --stroke-color: rgba(255, 255, 255, 0.5);
   --surface-color: rgba(255, 255, 255, 0.1);
   --surface-color-hover: rgba(0, 0, 0, 0.02);
@@ -16,7 +16,7 @@
 
 .light {
   --text-color: black;
-  --bg-url: url(./assets/barbie.png);
+  --bg-url: url(./assets/barbie_resized.png);
   --stroke-color: rgba(0, 0, 0, 0.5);
   --surface-color: rgba(0, 0, 0, 0.1);
   --surface-color-hover: rgba(255, 255, 255, 0.1);
@@ -27,6 +27,7 @@
 body {
   background: var(--bg-url) no-repeat top center/cover;
   transition: background 1s ease;
+  height: 100vh;
 }
 
 body * {
@@ -35,7 +36,8 @@ body * {
 }
 
 #container{
-  width: 360px;
+  width: 100%;
+  max-width: 425px;
   margin: 56px auto 0px;
   padding: 0 24px ;
 }
@@ -74,11 +76,16 @@ body * {
   left: 0;
   z-index: 1;
   transform: translateY(-50%);
+
+  animation: slide-out 0.8s;
 }
 
 .light #switch button {
-  right: 0;
-  left: initial;
+  animation: slide-in 0.8s forwards;
+}
+
+#switch button:hover {
+  outline: 8px solid var(--highlight-color);
 }
 
 #switch span {
@@ -147,4 +154,22 @@ ul li a:hover{
 
 #social-links a:hover {
   background-color: var(--highlight-color);
+}
+
+@keyframes slide-in {
+  from {
+    left: 0;
+  }
+  to {
+    left: 50%;
+  }
+}
+
+@keyframes slide-out {
+  from {
+    left: 50%;
+  }
+  to {
+    left: 0;
+  }
 }
