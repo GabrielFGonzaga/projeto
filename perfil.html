@@ -24,8 +24,10 @@
   <aside class="sidebar">
     <header class="sidebar-header">
       <img class="logo-img" src="/assets/avatar.png" alt="Foto de Gabriel">
-      <p class="name">Gabriel Figueiredo Gonzaga</p>
-      <p class="course">Engenharia de Computação</p>
+      <div class="text">
+      <p>Gabriel Figueiredo Gonzaga</p>
+      <p>Engenharia de Computação</p>
+      </div>
     </header>
     <div id="switch" onclick="toggleMode()">
         <button></button>
@@ -59,11 +61,58 @@
         </span>
       </button>
     </nav>
+
+    <button>
+        <span> 
+          <i class="material-symbols-outlined"> arrow_back </i>
+          <span>
+            <a href="./index.html">Voltar</a>
+          </span>
+        </span>
+      </button>
+    </nav>
   </aside>
 
-  <main class="main">
-    <h1> Bem Vindos</h1>
-  </main>
+  <button class="button-mobile">
+    <i class="material-symbols-outlined"> menu </i>
+    <span>Menu</span>
+  </button>
+
+  <nav class="menu-mobile" id="menu-mobile">
+    <button class="button-close">
+      <span>
+        <i class="material-symbols-outlined"> close </i>
+      </span>
+    </button>
+   
+    <button>
+        <span>
+          <i class="material-symbols-outlined"> playing_cards </i>
+          <span class="mobile-text">
+            Hobbies
+          </span>
+        </span>
+      </button>
+
+      <button>
+        <span>
+          <i class="material-symbols-outlined"> lightbulb </i>
+          <span class="mobile-text">
+            Habilidades
+          </span>
+        </span>
+      </button>
+
+      <button>
+        <span>
+          <i class="material-symbols-outlined"> rocket_launch </i>
+          <span class="mobile-text">
+            Include
+          </span>
+        </span>
+      </button>
+  </nav>
+
   <script src="./script.js"></script>
 </body>
 </html>
