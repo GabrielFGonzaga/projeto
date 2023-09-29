@@ -1,12 +1,69 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-br" class="">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Meu Perfil</title>
-  <link rel="stylesheet" href="./styleperfil.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0"
+   />
+    <link rel="stylesheet" href="styleperfil.css" />
+
+    <title>Meu Perfil</title>
 </head>
 <body>
-  Opa
+  
+  <aside class="sidebar">
+    <header class="sidebar-header">
+      <img class="logo-img" src="/assets/avatar.png" alt="Foto de Gabriel">
+      <p class="name">Gabriel Figueiredo Gonzaga</p>
+      <p class="course">Engenharia de Computação</p>
+    </header>
+    <div id="switch" onclick="toggleMode()">
+        <button></button>
+        <span> </span>
+      </div>
+    <nav>
+      <button>
+        <span>
+          <i class="material-symbols-outlined"> playing_cards </i>
+          <span>
+            Hobbies
+          </span>
+        </span>
+      </button>
+
+      <button>
+        <span>
+          <i class="material-symbols-outlined"> lightbulb </i>
+          <span>
+            Habilidades
+          </span>
+        </span>
+      </button>
+
+      <button>
+        <span>
+          <i class="material-symbols-outlined"> rocket_launch </i>
+          <span>
+            Include
+          </span>
+        </span>
+      </button>
+    </nav>
+  </aside>
+
+  <main class="main">
+    <h1> Bem Vindos</h1>
+  </main>
+  <script src="./script.js"></script>
 </body>
 </html>

@@ -1,9 +1,207 @@
 * {
-  margin: 0;
-  padding: 0;
   box-sizing: border-box;
+}
+:root {
+  --text-color: white;
+  --bg-url: url(./assets/openhei_resized.jpeg);
+  --stroke-color: rgba(255, 255, 255, 0.5);
+  --surface-color: rgba(255, 255, 255, 0.1);
+  --surface-color-hover: rgba(0, 0, 0, 0.02);
+  --highlight-color: rgba(255, 255, 255, 0.2);
+  --switch-bg-url: url(./assets/moon-stars.svg);
+}
+
+.light {
+  --text-color: black;
+  --bg-url: url(./assets/barbie_resized.png);
+  --stroke-color: rgba(0, 0, 0, 0.5);
+  --surface-color: rgba(0, 0, 0, 0.1);
+  --surface-color-hover: rgba(255, 255, 255, 0.1);
+  --highlight-color: rgba(0, 0, 0, 0.3);
+  --switch-bg-url: url(./assets/sun.svg);
 }
 
 body {
-  background-image: url(./assets/openhei.jpeg) no-repeat top center/cover;
+  margin: 0;
+  background: var(--bg-url) no-repeat top center/cover;
+  transition: background 1s ease;
+  height: 100vh;
+}
+
+body * {
+  font-family: "Inter", sans-serif;
+  color: var(--text-color);
+}
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 240px;
+  height: 100%;
+  padding: 40px 10px 30px 10px;
+  border-right: 1px solid #2f3336;
+  transition: all 0.4s;
+}
+
+.sidebar-header {
+  width: 100%;
+  margin-bottom:  16px;
+}
+
+.logo-img {
+  width: 50px;
+  min-height: 50px;
+  transition: transform 0.4s;
+
+  margin-left: 16px;
+}
+
+.logo-img:hover {
+  transform: scale(1.5);
+  ;
+}
+
+.name {
+  display: inline-flex;
+  font-size: 11px;
+}
+
+.course {
+  display: inline-flex;
+  font-size: 12px;
+  margin-left: 16px;
+}
+
+#switch {
+  position: relative;
+  width: 64px;
+
+  margin: 4px auto;
+}
+
+#switch button {
+  width: 32px;
+  height: 32px;
+  background: white var(--switch-bg-url) no-repeat center;
+  border: 0;
+  border-radius: 50%;
+
+  position: absolute;
+  top: 50%;
+  left: 0;
+  z-index: 1;
+  transform: translateY(-50%);
+
+  animation: slide-out 0.8s;
+}
+
+.light #switch button {
+  animation: slide-in 0.8s forwards;
+}
+
+#switch button:hover {
+  outline: 8px solid var(--highlight-color);
+}
+
+#switch span {
+  display: block;
+  width: 64px;
+  height: 24px;
+  background: var(--surface-color);
+  border: 1px solid var(--stroke-color);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border-radius: 9999px;
+}
+
+.sidebar button {
+  background: transparent;
+  border: 0;
+
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+
+  cursor: pointer;
+  text-align: left;
+  padding: 0;
+}
+
+.sidebar button > span {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  height: 48px;
+  padding: 0 16px 0 12px;
+  line-height: 1;
+}
+
+.sidebar button:hover > span {
+  outline: 4px solid var(--highlight-color);
+  border-radius: 8px;
+}
+
+.sidebar button i {
+  position: relative;
+  font-size: 28px;
+  transition: 0.2s;
+}
+
+.sidebar > nav {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.main {
+  margin-left: 250px;
+  margin-right: 6px;
+  overflow: hidden;
+  transition: all 0.4s;
+}
+
+@media (width < 920px) {
+  .sidebar {
+    width: 100px;
+  }
+  .sidebar button > span {
+    width: 50%;
+  }
+  .sidebar button > span > span {
+    opacity: 0;
+    visibility: hidden;
+  }
+  .name {
+    opacity: 0;
+    visibility: hidden;
+  }
+  .course {
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  .main {
+  margin-left: 110px;
+}
+}
+
+@keyframes slide-in {
+  from {
+    left: 0;
+  }
+  to {
+    left: 50%;
+  }
+}
+
+@keyframes slide-out {
+  from {
+    left: 50%;
+  }
+  to {
+    left: 0;
+  }
 }
