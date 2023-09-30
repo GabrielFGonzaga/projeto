@@ -34,7 +34,7 @@
         <span> </span>
       </div>
     <nav>
-      <button>
+      <button id="hobbies">
         <span>
           <i class="material-symbols-outlined"> playing_cards </i>
           <span>
@@ -43,7 +43,7 @@
         </span>
       </button>
 
-      <button>
+      <button id="habilidades">
         <span>
           <i class="material-symbols-outlined"> lightbulb </i>
           <span>
@@ -52,7 +52,7 @@
         </span>
       </button>
 
-      <button>
+      <button id="include">
         <span>
           <i class="material-symbols-outlined"> rocket_launch </i>
           <span>
@@ -64,28 +64,30 @@
 
     <button>
         <span> 
-          <i class="material-symbols-outlined"> arrow_back </i>
+           <a href="./index.html" class="backbutton" target="_self">
+            <i class="material-symbols-outlined"> arrow_back </i>
+           </a>
           <span>
-            <a href="./index.html">Voltar</a>
+            Voltar
           </span>
         </span>
       </button>
     </nav>
   </aside>
 
-  <button class="button-mobile">
+  <button class="button-mobile" onclick="toggleMenu()">
     <i class="material-symbols-outlined"> menu </i>
     <span>Menu</span>
   </button>
 
-  <nav class="menu-mobile" id="menu-mobile">
+  <nav class="menu-mobile" id="menu-mobile" onclick="toggleMenu()">
     <button class="button-close">
       <span>
         <i class="material-symbols-outlined"> close </i>
       </span>
     </button>
    
-    <button>
+    <button id="hobbiesm">
         <span>
           <i class="material-symbols-outlined"> playing_cards </i>
           <span class="mobile-text">
@@ -94,24 +96,83 @@
         </span>
       </button>
 
-      <button>
+      <button id="habilidadesm">
         <span>
           <i class="material-symbols-outlined"> lightbulb </i>
-          <span class="mobile-text">
+          <span class="mobile-text"></span>
             Habilidades
           </span>
         </span>
       </button>
 
-      <button>
+      <button id="includem">
         <span>
           <i class="material-symbols-outlined"> rocket_launch </i>
-          <span class="mobile-text">
+          <span class="mobile-text"></span>
             Include
           </span>
         </span>
       </button>
   </nav>
+  
+<!-- PopUp dos Hobbies-->
+  <dialog id="dialog_hobbies" class="popup">
+      <h2>Hobbies</h2>
+      <ul>
+        <li>
+          Surfar
+        </li>
+        <li>
+          Jogar Futvolêi
+        </li>
+        <li>
+          Montar a cavalo
+        </li>
+        <li>
+          Jogos Online
+        </li>
+        <li>
+          Musculação
+        </li>
+      </ul>
+      <button id="close_dialog_hobbies" class="popupClose">Fechar</button>
+  </dialog>
+
+  <!-- Pop Up Habilidades-->
+
+  <dialog id="dialog_habilidades" class="popup">
+      <h2>Habilidades</h2>
+      <ul>
+        <li>
+          Aprendizagem rápida
+        </li>
+        <li>
+          Comunicação
+        </li>
+        <li>
+          Pensamento Critico
+        </li>
+        <li>
+          Liderança
+        </li>
+        <li>
+          Trabalho em Equipe
+        </li>
+        <li>
+          Versatilidade
+        </li>
+      </ul>
+      <button id="close_dialog_habilidades" class="popupClose">Fechar</button>
+  </dialog>
+
+  <!-- PopUp Include-->
+
+  <dialog id="dialog_include" class="popup">
+      <h2>Porque devo entrar na Include?</h2>
+      <p>Mesmo estando no primeiro semestre, estou em busca de novas experiências. Tenho a vontade de me desenvolver e melhorar cada dia mais, tendo em vista que precisarei consertar erros e aprimorar acertos na minha caminhada. Estou disposto a entregar e ensinar o que sei, e aprender com quem já tem experiência.</p>
+      <button id="close_dialog_include" class="popupClose">Fechar</button>
+  </dialog>
+  
 
   <script src="./script.js"></script>
 </body>
