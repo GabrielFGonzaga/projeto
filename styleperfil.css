@@ -278,6 +278,10 @@ body * {
   .main {
     margin-left: 6px;
   }
+
+  .popup {
+    margin: auto;
+  }
 }
 
 .backbutton {
