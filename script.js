@@ -1,35 +1,41 @@
-const img = document.querySelector("#profile img");
+//Change the page theme
+
+const img = document.querySelector("#profile img")
 
 function toggleMode() {
-  const html = document.documentElement;
+  const html = document.documentElement
 
-  html.classList.toggle("light");
+  html.classList.toggle("light")
 
   localStorage.setItem(
     "theme",
     html.classList.contains("light") ? "light" : "dark"
-  );
+  )
 
   img.setAttribute(
     "src",
     html.classList.contains("light")
       ? "./assets/avatar-light.png"
       : "./assets/avatar.png"
-  );
+  )
 }
 
-const savedTheme = localStorage.getItem("theme");
+// Maintain theme between pages
+
+const savedTheme = localStorage.getItem("theme")
 
 if (savedTheme === "light") {
-  document.documentElement.classList.add("light");
+  document.documentElement.classList.add("light")
   if (img) {
-    img.setAttribute("src", "./assets/avatar-light.png");
+    img.setAttribute("src", "./assets/avatar-light.png")
   }
 } else {
   if (img) {
-    img.setAttribute("src", "./assets/avatar.png");
+    img.setAttribute("src", "./assets/avatar.png")
   }
 }
+
+// Activate Mobile Menu
 
 function toggleMenu() {
   const menuMobile = document.getElementById("menu-mobile")
@@ -41,88 +47,54 @@ function toggleMenu() {
   }
 }
 
-// PopUp Hobbies 
-const buttonHobbies = document.querySelector("#hobbies")
-const modalHobbies = document.querySelector("#dialog_hobbies")
-const buttonHobbiesClose = document.querySelector("#close_dialog_hobbies")
+//Open Button
 
-buttonHobbies.onclick = function () {
-  modalHobbies.showModal()
-}
+const popupButtons = document.querySelectorAll(".popup-button")
 
-buttonHobbiesClose.onclick = function () {
-  modalHobbies.close()
-}
-// PopUp Habilidades
+popupButtons.forEach(function (button) {
+  button.addEventListener("click", function () {
+    const modalId = button.getAttribute("data-modal-target")
+    const modal = document.getElementById(modalId)
 
-const buttonHabilidades = document.querySelector("#habilidades")
-const modalHabilidades = document.querySelector("#dialog_habilidades")
-const buttonHabilidadesClose = document.querySelector(
-  "#close_dialog_habilidades"
-)
+    if (modal) {
+      modal.showModal()
+    }
+  })
+})
 
-buttonHabilidades.onclick = function () {
-  modalHabilidades.showModal()
-}
+const popupCloseButtons = document.querySelectorAll(".popupClose")
 
-buttonHabilidadesClose.onclick = function () {
-  modalHabilidades.close()
-}
+popupCloseButtons.forEach(function (closeButton) {
+  closeButton.addEventListener("click", function () {
+    const modal = closeButton.closest("dialog")
+    if (modal) {
+      modal.close()
+    }
+  })
+})
 
-// PopUp Include
+//Open Button mobile
 
-const buttonInclude = document.querySelector("#include")
-const modalInclude = document.querySelector("#dialog_include")
-const buttonIncludeClose = document.querySelector("#close_dialog_include")
+const popupmobileButtons = document.querySelectorAll(".popup-button-mobile")
 
-buttonInclude.onclick = function () {
-  modalInclude.showModal()
-}
+popupmobileButtons.forEach(function (button) {
+  button.addEventListener("click", function () {
+    const modalIdmobile = button.getAttribute("data-modal-target")
+    const modalmobile = document.getElementById(modalIdmobile)
 
-buttonIncludeClose.onclick = function () {
-  modalInclude.close()
-}
+    if (modalmobile) {
+      modalmobile.showModal()
+    }
+  })
+})
 
-//Mobile
+const popupmobileCloseButtons = document.querySelectorAll(".popupClose")
 
-const buttonHobbiesM = document.querySelector("#hobbiesm")
-const modalHobbiesM = document.querySelector("#dialog_hobbies")
-const buttonHobbiesMClose = document.querySelector("#close_dialog_hobbies")
-
-buttonHobbiesM.onclick = function () {
-  modalHobbiesM.showModal()
-}
-
-buttonHobbiesMClose.onclick = function () {
-  modalHobbiesM.close()
-}
-
-// PopUp Habilidades
-
-const buttonHabilidadesM = document.querySelector("#habilidadesm")
-const modalHabilidadesM = document.querySelector("#dialog_habilidades")
-const buttonHabilidadesMClose = document.querySelector(
-  "#close_dialog_habilidades"
-)
-
-buttonHabilidadesM.onclick = function () {
-  modalHabilidadesM.showModal()
-}
-
-buttonHabilidadesMClose.onclick = function () {
-  modalHabilidadesM.close()
-}
-
-// PopUp Include
-
-const buttonIncludeM = document.querySelector("#includem")
-const modalIncludeM = document.querySelector("#dialog_include")
-const buttonIncludeMClose = document.querySelector("#close_dialog_includem")
-
-buttonIncludeM.onclick = function () {
-  modalIncludeM.showModal()
-}
-
-buttonIncludeMClose.onclick = function () {
-  modalIncludeM.close()
-}
+popupmobileCloseButtons.forEach(function (closeButton) {
+  closemobileButton.addEventListener("click", function () {
+    const modalmobile = closemobileButton.closest("dialog")
+    if (modal) {
+      modalmobile.close()
+    }
+  })
+})

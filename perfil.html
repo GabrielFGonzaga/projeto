@@ -34,7 +34,7 @@
         <span> </span>
       </div>
     <nav>
-      <button id="hobbies">
+      <button id="popup" class="popup-button" data-modal-target="dialog_popup1">
         <span>
           <i class="material-symbols-outlined"> playing_cards </i>
           <span>
@@ -43,7 +43,7 @@
         </span>
       </button>
 
-      <button id="habilidades">
+      <button id="popup" class="popup-button" data-modal-target="dialog_popup2">
         <span>
           <i class="material-symbols-outlined"> lightbulb </i>
           <span>
@@ -52,7 +52,7 @@
         </span>
       </button>
 
-      <button id="include">
+      <button id="popup" class="popup-button" data-modal-target="dialog_popup3">
         <span>
           <i class="material-symbols-outlined"> rocket_launch </i>
           <span>
@@ -87,7 +87,7 @@
       </span>
     </button>
    
-    <button id="hobbiesm">
+    <button id="popup" class="popup-button-mobile" data-modal-target="dialog_popup1">
         <span>
           <i class="material-symbols-outlined"> playing_cards </i>
           <span class="mobile-text">
@@ -96,7 +96,7 @@
         </span>
       </button>
 
-      <button id="habilidadesm">
+      <button id="popup" class="popup-button-mobile" data-modal-target="dialog_popup2">
         <span>
           <i class="material-symbols-outlined"> lightbulb </i>
           <span class="mobile-text"></span>
@@ -105,7 +105,7 @@
         </span>
       </button>
 
-      <button id="includem">
+      <button id="popup" class="popup-button-mobile" data-modal-target="dialog_popup3">
         <span>
           <i class="material-symbols-outlined"> rocket_launch </i>
           <span class="mobile-text"></span>
@@ -116,7 +116,7 @@
   </nav>
   
 <!-- PopUp dos Hobbies-->
-  <dialog id="dialog_hobbies" class="popup">
+  <dialog id="dialog_popup1" class="popup">
       <h2>Hobbies</h2>
       <ul>
         <li>
@@ -135,12 +135,12 @@
           Musculação
         </li>
       </ul>
-      <button id="close_dialog_hobbies" class="popupClose">Fechar</button>
+      <button id="close_dialog_popup1" class="popupClose">Fechar</button>
   </dialog>
 
   <!-- Pop Up Habilidades-->
 
-  <dialog id="dialog_habilidades" class="popup">
+  <dialog id="dialog_popup2" class="popup">
       <h2>Habilidades</h2>
       <ul>
         <li>
@@ -162,17 +162,16 @@
           Versatilidade
         </li>
       </ul>
-      <button id="close_dialog_habilidades" class="popupClose">Fechar</button>
+      <button id="close_dialog_popup2" class="popupClose">Fechar</button>
   </dialog>
 
   <!-- PopUp Include-->
 
-  <dialog id="dialog_include" class="popup">
+  <dialog id="dialog_popup3" class="popup">
       <h2>Porque devo entrar na Include?</h2>
       <p>Mesmo estando no primeiro semestre, estou em busca de novas experiências. Tenho a vontade de me desenvolver e melhorar cada dia mais, tendo em vista que precisarei consertar erros e aprimorar acertos na minha caminhada. Estou disposto a entregar e ensinar o que sei, e aprender com quem já tem experiência.</p>
-      <button id="close_dialog_include" class="popupClose">Fechar</button>
+      <button id="close_dialog_popup3" class="popupClose">Fechar</button>
   </dialog>
-  
 
   <script src="./script.js"></script>
 </body>
